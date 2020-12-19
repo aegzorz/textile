@@ -26,4 +26,12 @@ class TextStyleTests: XCTestCase {
         let attributedText = style(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
         assertSnapshot(matching: attributedText, as: .dump)
     }
+    
+    func testMultipleStyles() {
+        let attributedText = NSMutableAttributedString()
+        attributedText.append("Hello ".style(.simple))
+        attributedText.append("World!".style(.combining(.simple, .uppercase)))
+        
+        assertSnapshot(matching: attributedText, as: .dump)
+    }
 }

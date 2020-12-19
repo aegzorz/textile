@@ -21,7 +21,7 @@ open class TextileLabel: UILabel {
         }
     }
 
-    public init(style: TextStyle, text: String? = nil) {
+    public init(style: TextStyle? = nil, text: String? = nil) {
         textStyle = style
         super.init(frame: .zero)
         self.text = text

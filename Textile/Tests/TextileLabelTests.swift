@@ -21,4 +21,19 @@ class TextileLabelTests: XCTestCase {
         label.backgroundColor = .white
         assertSnapshot(matching: label, as: .image)
     }
+    
+    func testCombiningStyles() {
+        let label = TextileLabel()
+        label.text = "Lorem ipsum dolor sit amet"
+        
+        label.textStyle = .combining(.boldBlueForeground, .italicRedBackground)
+        
+        // Should be blue italic on red background
+        assertSnapshot(matching: label, as: .image)
+        
+        label.textStyle = .combining(.italicRedBackground, .boldBlueForeground)
+        
+        // Should be blue bold on red background
+        assertSnapshot(matching: label, as: .image)
+    }
 }

@@ -16,7 +16,9 @@ public struct TextStyle {
         return NSAttributedString(string: transformedText, attributes: attributes)
     }
 
-    public init() { }
+    public init(configure: (inout TextStyle) -> Void = { _ in }) {
+        configure(&self)
+    }
 
     fileprivate var transformers: [TextTransformer] = []
     fileprivate var attributes: [NSAttributedString.Key: Any] = [:]

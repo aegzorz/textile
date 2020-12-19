@@ -1,0 +1,4 @@
+- Hello World!{
+    NSColor = "UIExtendedGrayColorSpace 0 1";
+    NSFont = "<UICTFont> font-family: \".SFUI-Regular\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
+}

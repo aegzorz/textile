@@ -1,0 +1,12 @@
+- Hello World!{
+    NSBaselineOffset = 2;
+    NSColor = "UIExtendedSRGBColorSpace 1 0 0 1";
+    NSFont = "<UICTFont> font-family: \".SFUI-Bold\"; font-weight: bold; font-style: normal; font-size: 24.00pt";
+    NSKern = 2;
+    NSParagraphStyle = "Alignment 4, LineSpacing 0, ParagraphSpacing 0, ParagraphSpacingBefore 0, HeadIndent 10, TailIndent 0, FirstLineHeadIndent 0, LineHeight 24/0, LineHeightMultiple 0, LineBreakMode 5, Tabs (\n    28L,\n    56L,\n    84L,\n    112L,\n    140L,\n    168L,\n    196L,\n    224L,\n    252L,\n    280L,\n    308L,\n    336L\n), DefaultTabInterval 0, Blocks (\n), Lists (\n), BaseWritingDirection -1, HyphenationFactor 0, TighteningForTruncation NO, HeaderLevel 0 LineBreakStrategy 0";
+    NSShadow = "NSShadow {0, 4} blur = 2 color = {UIExtendedGrayColorSpace 0.333333 1}";
+    NSStrokeColor = "UIExtendedSRGBColorSpace 1 1 0 1";
+    NSStrokeWidth = "-2";
+    NSUnderline = 1024;
+    NSUnderlineColor = "UIExtendedSRGBColorSpace 0 0 1 1";
+}

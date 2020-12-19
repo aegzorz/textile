@@ -21,6 +21,7 @@ let tests = Target(
     bundleId: "se.aegzorz.textiletests",
     infoPlist: .default,
     sources: "Tests/**",
+    resources: "Tests/Resources**",
     dependencies: [
         .target(name: "Textile"),
         .package(product: "SnapshotTesting")

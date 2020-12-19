@@ -20,4 +20,10 @@ class TextStyleTests: XCTestCase {
         let attributedText = TextStyle.complex(text: "Hello World!")
         assertSnapshot(matching: attributedText, as: .dump)
     }
+    
+    func testCombiningStyles() {
+        let style: TextStyle = .combining(.simple, .uppercase)
+        let attributedText = style(text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")
+        assertSnapshot(matching: attributedText, as: .dump)
+    }
 }

@@ -1,0 +1,4 @@
+- LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.{
+    NSColor = "UIExtendedGrayColorSpace 0 1";
+    NSFont = "<UICTFont> font-family: \".SFUI-Regular\"; font-weight: normal; font-style: normal; font-size: 18.00pt";
+}

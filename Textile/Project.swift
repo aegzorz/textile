@@ -31,7 +31,7 @@ let project = Project(
     name: "Textile",
     organizationName: "aegzorz",
     packages: [
-        .remote(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", requirement: .upToNextMajor(from: .init(1, 8, 0)))
+        .package(url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .upToNextMajor(from: "1.8.0")),
     ],
     targets: [
         framework,

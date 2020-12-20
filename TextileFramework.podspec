@@ -1,5 +1,5 @@
 Pod::Spec.new do |spec|
-  spec.name         = "Textile"
+  spec.name         = "TextileFramework"
   spec.version      = "0.0.1"
   spec.summary      = "Textile styles your text"
   spec.description  = <<-DESC

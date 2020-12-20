@@ -20,12 +20,14 @@ label.attributedText = style(text: "Hello World!")
 
 ## Combine styles
 ```
-static let body = TextStyle { style in
-    style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
-}
+extension TextStyle {
+    static let body = TextStyle { style in
+        style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
+    }
 
-static let uppercase = TextStyle { style in
-    style.add(transformer: .init(\.localizedUppercase))
+    static let uppercase = TextStyle { style in
+        style.add(transformer: .init(\.localizedUppercase))
+    }
 }
 
 let combined: TextStyle = .combining(.body, .uppercase)

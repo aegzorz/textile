@@ -45,12 +45,13 @@ class ReadmeTests: XCTestCase {
         
         let label = UILabel()
         label.attributedText = style(text: "Hello world!")
+        label.backgroundColor = .snapshotBackground
         
         assertSnapshot(matching: label, as: .image)
     }
     
     func testTextileLabel() {
-        let label = TextileLabel(style: .combining(.body, .uppercase), text: "Hello World!")
+        let label = TextileLabel(style: .combining(.body, .uppercase, .backgroundColor(.snapshotBackground)), text: "Hello World!")
         assertSnapshot(matching: label, as: .image)
     }
     
@@ -68,9 +69,14 @@ class ReadmeTests: XCTestCase {
         label.lineBreakMode = .byWordWrapping
         label.numberOfLines = 0
         label.attributedText = attributedText
+        label.backgroundColor = .snapshotBackground
         
         assertSnapshot(matching: label, as: .image(size: CGSize(width: 350, height: 150)))
     }
+}
+
+private extension UIColor {
+    static let snapshotBackground = UIColor(red: 1, green: 1, blue: 0.8, alpha: 1)
 }
 
 private extension TextStyle {
@@ -103,5 +109,11 @@ private extension TextStyle {
         paragraph.alignment = .right
         style.set(.paragraphStyle, paragraph)
         style.set(.foregroundColor, .darkGray)
+    }
+    
+    static func backgroundColor(_ color: UIColor) -> TextStyle {
+        TextStyle { style in
+            style.add(configurator: .init(\.backgroundColor, color))
+        }
     }
 }

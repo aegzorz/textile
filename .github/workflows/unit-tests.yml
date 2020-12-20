@@ -12,10 +12,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Tuist
+      - name: Install tuist
         run: |
             bash <(curl -Ls https://install.tuist.io)
             tuist bundle
+      - name: Test
+        run: |
             tuist generate
             tuist test
         env:

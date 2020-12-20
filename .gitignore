@@ -4,3 +4,5 @@
 *.xcodeproj
 */Derived
 /.tuist-bin
+/.build
+/.swiftpm

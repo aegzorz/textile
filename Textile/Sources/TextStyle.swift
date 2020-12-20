@@ -28,6 +28,7 @@ public struct TextStyle {
     }
 
     fileprivate var transformers: [TextTransformer] = []
+    fileprivate var configurators: [LabelConfigurator] = []
     fileprivate var attributes: [NSAttributedString.Key: Any] = [:]
 }
 
@@ -38,8 +39,18 @@ extension TextStyle {
         }
     }
 
-    public mutating func addTextTransformer(_ transformer: TextTransformer) {
+    public mutating func add(transformer: TextTransformer) {
         transformers.append(transformer)
+    }
+
+    public mutating func add(configurator: LabelConfigurator) {
+        configurators.append(configurator)
+    }
+
+    public func apply(to label: UILabel) {
+        configurators.forEach { configurator in
+            configurator.configure(label)
+        }
     }
 
     public mutating func set<T>(_ attribute: Attribute<T>, _ value: T) {
@@ -53,6 +64,7 @@ extension TextStyle {
 
     public mutating func merge(with textStyle: TextStyle) {
         transformers.append(contentsOf: textStyle.transformers)
+        configurators.append(contentsOf: textStyle.configurators)
         attributes.merge(textStyle.attributes) { $1 }
     }
 }

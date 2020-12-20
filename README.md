@@ -1,7 +1,7 @@
-![Textile Logo](/Textile/Tests/__Snapshots__/TextileLabelTests/testCustomFont.1.png?raw=true)
+![Textile Logo](/Textile/Tests/__Snapshots__/ReadmeTests/testCustomFont.1.png?raw=true)
 
 # Textile
-Textile styles your text
+Textile _styles_ your text
 
 ## Define a TextStyle
 ```
@@ -11,11 +11,14 @@ let style = TextStyle { style in
 }
 ```
 
-## Style your text 
+## Style your text
 ```
 let label = UILabel()
-label.attributedText = style(text: " Textile ")
+label.attributedText = style(text: "Hello World!")
 ```
+
+![Simple Style](/Textile/Tests/__Snapshots__/ReadmeTests/testSimpleStyle.1.png?raw=true)
+
 ## Combine styles
 ```
 static let body = TextStyle { style in
@@ -33,3 +36,4 @@ let combined: TextStyle = .combining(.body, .uppercase)
 ```
 let label = TextileLabel(textStyle: .combining(.body, .uppercase), text: "Hello World!")
 
+![Textile Label](/Textile/Tests/__Snapshots__/ReadmeTests/testTextileLabel.1.png?raw=true)

@@ -39,6 +39,10 @@ extension TextStyle {
         }
     }
 
+    public static func + (lhs: TextStyle, rhs: TextStyle) -> TextStyle {
+        combining(lhs, rhs)
+    }
+
     public mutating func add(transformer: TextTransformer) {
         transformers.append(transformer)
     }

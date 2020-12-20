@@ -18,7 +18,7 @@ label.attributedText = style(text: "Hello World!")
 
 ![Simple Style](/Textile/Tests/__Snapshots__/ReadmeTests/testSimpleStyle.1.png?raw=true)
 
-## Combine styles
+## Combining text styles
 ```
 static let body = TextStyle { style in
     style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
@@ -29,7 +29,12 @@ static let uppercase = TextStyle { style in
 }
 
 let combined: TextStyle = .combining(.body, .uppercase)
+
+// or using `+` operator
+
+let combined: TextStyle = .body + .uppercase
 ```
+The rightmost style has precedence.
 
 ## Use `TextileLabel` for convenience
 ```

@@ -6,7 +6,14 @@
 //  Copyright © 2020 aegzorz. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
+
+public extension String {
+    func style(_ textStyle: TextStyle) -> NSAttributedString {
+        textStyle(text: self)
+    }
+}
 
 public struct TextStyle {
     public func callAsFunction(text: String) -> NSAttributedString {
@@ -49,3 +56,4 @@ extension TextStyle {
         attributes.merge(textStyle.attributes) { $1 }
     }
 }
+#endif

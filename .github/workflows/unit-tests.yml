@@ -1,0 +1,21 @@
+name: Unit Tests
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Build and Test
+        run: swift test
+        env:
+          DEVELOPER_DIR: /Applications/Xcode_12.3.app/Contents/Developer

@@ -7,7 +7,9 @@ let package = Package(
     products: [
         .library(name: "Textile", targets: ["Textile"]),
     ],
-    dependencies: [],
+    dependencies: [
+        .package(name: "SnapshotTesting", url: "https://github.com/pointfreeco/swift-snapshot-testing.git", .upToNextMajor(from: "1.8.0"))
+    ],
     targets: [
         .target(
             name: "Textile",
@@ -15,7 +17,7 @@ let package = Package(
         ),
         .testTarget(
             name: "TextileTests",
-            dependencies: ["Textile"],
+            dependencies: ["Textile", "SnapshotTesting"],
             path: "Textile/Tests"
         )
     ],

@@ -6,6 +6,7 @@
 //  Copyright © 2020 aegzorz. All rights reserved.
 //
 
+#if canImport(UIKit)
 import UIKit
 
 extension TextStyle {
@@ -39,3 +40,5 @@ public extension TextStyle.Attribute {
     static var obliqueness: TextStyle.Attribute<Float> { return .init(.obliqueness) }
     static var expansion: TextStyle.Attribute<Float> { return .init(.expansion) }
 }
+
+#endif

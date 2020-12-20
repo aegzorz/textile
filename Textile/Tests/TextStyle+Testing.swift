@@ -16,7 +16,11 @@ extension TextStyle {
     }
     
     static let uppercase = TextStyle { style in
-        style.addTextTransformer(.init(\.localizedUppercase))
+        style.add(transformer: .init(\.localizedUppercase))
+    }
+    
+    static let multiline = TextStyle { style in
+        style.add(configurator: .init(\.numberOfLines, 0))
     }
     
     static let complex = TextStyle { style in

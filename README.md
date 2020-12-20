@@ -3,16 +3,13 @@
 # Textile
 Textile _styles_ your text
 
-## Define a TextStyle
+## Define and use TextStyle
 ```
 let style = TextStyle { style in
     style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
     style.set(.foregroundColor, .black)
 }
-```
 
-## Style your text
-```
 let label = UILabel()
 label.attributedText = style(text: "Hello World!")
 ```
@@ -26,7 +23,7 @@ static let body = TextStyle { style in
 }
 
 static let uppercase = TextStyle { style in
-    style.addTextTransformer(.init(\.localizedUppercase))
+    style.add(transformer: .init(\.localizedUppercase))
 }
 
 let combined: TextStyle = .combining(.body, .uppercase)

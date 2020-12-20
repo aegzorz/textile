@@ -1,4 +1,4 @@
-![Textile Logo](/Textile/Tests/__Snapshots__/ReadmeTests/testCustomFont.1.png?raw=true)
+![Textile Logo](/Textile/Tests/__Snapshots__/ReadmeTests/testLogo.1.png?raw=true)
 
 # Textile
 Textile _styles_ your text

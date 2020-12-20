@@ -36,6 +36,7 @@ open class TextileLabel: UILabel {
     private func applyTextStyle() {
         guard let text = text else { return }
         attributedText = textStyle?(text: text)
+        textStyle?.apply(to: self)
     }
 }
 #endif

@@ -35,5 +35,5 @@ let combined: TextStyle = .combining(.body, .uppercase)
 ## Use `TextileLabel` for convenience
 ```
 let label = TextileLabel(textStyle: .combining(.body, .uppercase), text: "Hello World!")
-
+```
 ![Textile Label](/Textile/Tests/__Snapshots__/ReadmeTests/testTextileLabel.1.png?raw=true)

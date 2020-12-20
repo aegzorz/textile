@@ -54,10 +54,54 @@ class ReadmeTests: XCTestCase {
         assertSnapshot(matching: label, as: .image)
     }
     
+    func testComplexStyle() {
+        let attributedText = NSMutableAttributedString()
+        attributedText.append("First we need a title\n".style(.heading))
+        attributedText.append("Here starts the ".style(.body))
+        attributedText.append("body text".style(.body + .underlined))
+        attributedText.append(", then suddenly we might want some".style(.body))
+        attributedText.append(" bold text ".style(.bodyBold))
+        attributedText.append("in the middle.\n".style(.body))
+        attributedText.append("...and then some right-aligned text".style(.body + .rightGray))
+        
+        let label = UILabel()
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        label.attributedText = attributedText
+        
+        assertSnapshot(matching: label, as: .image(size: CGSize(width: 350, height: 150)))
+    }
 }
 
 private extension TextStyle {
+    static let heading = TextStyle { style in
+        style.set(.font, UIFont.systemFont(ofSize: 24))
+        style.merge(with: .center)
+    }
+    
     static let body = TextStyle { style in
         style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
+    }
+    
+    static let underlined = TextStyle { style in
+        style.set(.underlineStyle, .single)
+        style.set(.underlineColor, .black)
+    }
+    
+    static let bodyBold = TextStyle { style in
+        style.set(.font, UIFont.systemFont(ofSize: 18, weight: .bold))
+    }
+    
+    static let center = TextStyle { style in
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .center
+        style.set(.paragraphStyle, paragraph)
+    }
+    
+    static let rightGray = TextStyle { style in
+        let paragraph = NSMutableParagraphStyle()
+        paragraph.alignment = .right
+        style.set(.paragraphStyle, paragraph)
+        style.set(.foregroundColor, .darkGray)
     }
 }

@@ -43,3 +43,22 @@ The rightmost style has precedence.
 let label = TextileLabel(textStyle: .combining(.body, .uppercase), text: "Hello World!")
 ```
 ![Textile Label](/Textile/Tests/__Snapshots__/ReadmeTests/testTextileLabel.1.png?raw=true)
+
+## Example with a bit more complex styling
+```
+let attributedText = NSMutableAttributedString()
+attributedText.append("First we need a title\n".style(.heading))
+attributedText.append("Here starts the ".style(.body))
+attributedText.append("body text".style(.body + .underlined))
+attributedText.append(", then suddenly we might want some".style(.body))
+attributedText.append(" bold text ".style(.bodyBold))
+attributedText.append("in the middle.\n".style(.body))
+attributedText.append("...and then some right-aligned text".style(.body + .rightGray))
+
+let label = UILabel()
+label.lineBreakMode = .byWordWrapping
+label.numberOfLines = 0
+label.attributedText = attributedText
+```
+
+![Complex](/Textile/Tests/__Snapshots__/ReadmeTests/testComplexStyle.1.png?raw=true)

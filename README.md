@@ -1,5 +1,7 @@
 ![Build](https://img.shields.io/github/workflow/status/aegzorz/textile/Unit%20Tests?style=for-the-badge)
 ![Cocoapod](https://img.shields.io/cocoapods/p/TextileFramework?style=for-the-badge)
+![License](https://img.shields.io/cocoapods/l/TextileFramework?style=for-the-badge)
+![Version](https://img.shields.io/github/v/release/aegzorz/textile?style=for-the-badge)
 
 ![Textile Logo](/Textile/Tests/__Snapshots__/ReadmeTests/testLogo.1.png?raw=true)
 

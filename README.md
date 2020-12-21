@@ -65,3 +65,14 @@ label.attributedText = attributedText
 ```
 
 ![Complex](/Textile/Tests/__Snapshots__/ReadmeTests/testComplexStyle.1.png?raw=true)
+
+## Installation
+
+With cocoapods:
+```
+target 'MyApp' do
+  pod 'TextileFramework'
+end
+```
+
+

@@ -9,7 +9,7 @@
 Textile _styles_ your text
 
 ## Define and use TextStyle
-```
+```swift
 let style = TextStyle { style in
     style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
     style.set(.foregroundColor, .black)
@@ -22,7 +22,7 @@ label.attributedText = style(text: "Hello World!")
 ![Simple Style](/Textile/Tests/__Snapshots__/ReadmeTests/testSimpleStyle.1.png?raw=true)
 
 ## Combining text styles
-```
+```swift
 extension TextStyle {
     static let body = TextStyle { style in
         style.set(.font, UIFont.systemFont(ofSize: 18, weight: .regular))
@@ -42,13 +42,13 @@ let combined: TextStyle = .body + .uppercase
 The rightmost style has precedence.
 
 ## Use `TextileLabel` for convenience
-```
+```swift
 let label = TextileLabel(textStyle: .combining(.body, .uppercase), text: "Hello World!")
 ```
 ![Textile Label](/Textile/Tests/__Snapshots__/ReadmeTests/testTextileLabel.1.png?raw=true)
 
 ## Example with a bit more complex styling
-```
+```swift
 let attributedText = NSMutableAttributedString()
 attributedText.append("First we need a title\n".style(.heading))
 attributedText.append("Here starts the ".style(.body))
@@ -69,7 +69,7 @@ label.attributedText = attributedText
 ## Installation
 
 With cocoapods:
-```
+```ruby
 target 'MyApp' do
   pod 'TextileFramework'
 end
